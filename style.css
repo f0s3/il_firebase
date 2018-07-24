@@ -1,0 +1,81 @@
+html, body, input, form {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+body, #chat {
+    height: 100%;
+}
+
+.qr-code {
+    display: none;
+}
+
+#chat {
+    padding: .5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+#messages {
+    overflow: auto;
+    margin-bottom: .5rem;
+}
+
+.message {
+    margin-top: .5rem;
+    padding: .5rem;
+    background-color: lightblue;
+    border-radius: 10px;
+    float: left;
+    clear: both;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+input[name="message"], button[type="submit"] {
+    border: 1px solid skyblue;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+input[name="message"] {
+    background-color: azure;
+    flex: 1 1;
+    width: 1px; /* force width recalculation on mobile devices */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+button[type="submit"] {
+    background-color: lightskyblue;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media(min-width: 850px) {
+    .qr-code {
+        display: inline-block;
+        align-self: flex-start;
+        width: 500px;
+    }
+}

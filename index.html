@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="message-template">
+        <div class="message">
+          <div class="body"></div>
+          <div class="time"></div>
+        </div>
+    </template>
+    <div id="chat">
+        <div id="messages"></div>
+        <form id="message-form" autocomplete="off">
+            <input type="text" name="message">
+            <button type="submit">
+                Send
+            </button>
+        </form>
+    </div>
+    <!-- import firebase.js HERE -->
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyArSRTMXUu-3_NJftEBVciglAtgOXVm-7E",
+    authDomain: "il-test-rtdb.firebaseapp.com",
+    databaseURL: "https://il-test-rtdb.firebaseio.com",
+    projectId: "il-test-rtdb",
+    storageBucket: "il-test-rtdb.appspot.com",
+    messagingSenderId: "453830688351"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="index.js"></script>
+</body>
+</html>
