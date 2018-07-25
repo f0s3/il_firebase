@@ -3,40 +3,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Firebase Chat</title>
+    <title>f0s3 Chat</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- templates section -->
     <template id="message-template">
         <div class="message">
-          <div class="body"></div>
-          <div class="time"></div>
+            <div class="username"></div>
+            <div class="body"></div>
+            <div class="time"></div>
         </div>
     </template>
-    <div id="chat">
-        <div id="messages"></div>
-        <form id="message-form" autocomplete="off">
-            <input type="text" name="message">
-            <button type="submit">
-                Send
-            </button>
-        </form>
+    <header class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <input type="text" class="header-searchbar col-lg-6" placeholder="Start typing..."></input>
+            <!-- will be dropdown menu later ("Settings" tab is to be created and put inside dropdown)-->
+            <div class="header-dropdown-menu col-lg-3">
+                <button type="button" name="button">Log out</button>
+            </div>
+        </div>
+    </header>
+    <div id="main" class="container">
+        <div class="row">
+            <div id="chat-selector" class="col-lg-3">chat selector</div>
+            <div id="chat" class="col-lg-6">
+                <div id="messages"></div>
+                <form id="message-form" autocomplete="off">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="message" aria-describedby="button-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div id="selected-user-info col-lg-3">selected user info</div>
+        </div/
     </div>
-    <!-- import firebase.js HERE -->
-
-<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyArSRTMXUu-3_NJftEBVciglAtgOXVm-7E",
-    authDomain: "il-test-rtdb.firebaseapp.com",
-    databaseURL: "https://il-test-rtdb.firebaseio.com",
-    projectId: "il-test-rtdb",
-    storageBucket: "il-test-rtdb.appspot.com",
-    messagingSenderId: "453830688351"
-  };
-  firebase.initializeApp(config);
-</script>
+    <!-- scripts section -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyDQfYe99Se0fjJcwwNFpiluGXo9N85UnDI",
+        authDomain: "f0s3-realtime-chat.firebaseapp.com",
+        databaseURL: "https://f0s3-realtime-chat.firebaseio.com",
+        projectId: "f0s3-realtime-chat",
+        storageBucket: "f0s3-realtime-chat.appspot.com",
+        messagingSenderId: "671381086873"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="index.js"></script>
 </body>
 </html>
