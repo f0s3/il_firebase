@@ -1,8 +1,6 @@
-// subscribe for new messages
 let database = firebase.database();
 let messagesRef = database.ref('/messages');
 messagesRef.on('child_added', (data) => {
-  //console.log(data.val())
   appendMessage(data.val())
 })
 
@@ -40,8 +38,9 @@ messageForm.onsubmit = (event) => {
       body: messageInput.value,
       timestamp: Date.now()
     }
-    console.log(message);
-    messagesRef.push(message)
+    if (messageInput.value !== "") {
+        messagesRef.push(message)
+    }
 
     messageForm.reset();
     messageInput.focus();
