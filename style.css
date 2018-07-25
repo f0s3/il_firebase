@@ -1,27 +1,55 @@
-html, body, input, form {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    font-size: 20px;
-}
-
 body {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
+    background-color: #eee!important;
 }
 
-body, #chat {
-    height: 100%;
+
+header.container {
+    background-color: #4a76a8;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
-.qr-code {
-    display: none;
+.header-searchbar {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #4a76a8;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    outline: none;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightgray;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: lightgray;
+}
+
+.header-dropdown-menu {
+    text-align: right;
+}
+
+.header-dropdown-menu button {
+    background-color: #4a76a8;
+    border-radius: 4px;
+    border: none;
+}
+
+.header-dropdown-menu button:hover {
+    background-color: #3d6898;
+    border: none;
+}
+
 
 #chat {
+    height: 94%;
+    background-color: white;
     padding: .5rem;
     box-sizing: border-box;
     display: flex;
@@ -30,52 +58,21 @@ body, #chat {
     flex-grow: 1;
 }
 
+
 #messages {
     overflow: auto;
-    margin-bottom: .5rem;
+}
+
+#message-form {
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .message {
-    margin-top: .5rem;
-    padding: .5rem;
-    background-color: lightblue;
-    border-radius: 10px;
+    margin-top: .2rem;
+    padding: .2rem;
+    border-radius: 4px;
+    background-color: #89b3e5;
     float: left;
     clear: both;
-}
-
-form {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-}
-
-input[name="message"], button[type="submit"] {
-    border: 1px solid skyblue;
-    outline: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    padding: 0.5rem;
-}
-
-input[name="message"] {
-    background-color: azure;
-    flex: 1 1;
-    width: 1px; /* force width recalculation on mobile devices */
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-button[type="submit"] {
-    background-color: lightskyblue;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-@media(min-width: 850px) {
-    .qr-code {
-        display: inline-block;
-        align-self: flex-start;
-        width: 500px;
-    }
 }
